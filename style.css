@@ -1,0 +1,319 @@
+/* Globální nastavení */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1, h2 {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Sekce */
+.Onas, .Sluzby, .Cenik, .Kontakt {
+  scroll-margin-top: 50px;
+}
+
+.Onas, .Cenik, .Sluzby {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: 100px 40px;
+  box-sizing: border-box;
+  gap: 30px;
+}
+
+.Onas {
+    margin-top: 65px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #FFFBF0;
+  font-size: 25px;
+  gap: 55px;
+}
+
+.Onas h1 {
+  font-size: 48px;
+}
+
+.text {
+  max-width: 60%;
+}
+
+#obrazek1 {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  background: url("Obrázky/1.png") center/contain no-repeat;
+}
+
+.Sluzby {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F9FF;
+  font-size: 24px;
+  text-align: center;
+}
+
+.Cenik {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #FFFBF0;
+  gap: 20px;
+}
+
+.Cenik-text {
+  max-width: 70%;
+  font-size: 18px;
+  color: black;
+  text-align: left;
+}
+
+#obrazek2 {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  padding-top: 90px;
+  background: url("Obrázky/2.png") center/contain no-repeat;
+}
+
+.Kontakt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #F0F9FF;
+  font-size: 28px;
+}
+
+.Kontakt form {
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
+
+.Kontakt label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.Kontakt input[type="text"], .Kontakt textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Kontakt input[type="text"]:focus, .Kontakt textarea:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
+}
+
+.Kontakt textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.Kontakt button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.Kontakt button:hover {
+  background-color: #222;
+}
+
+/* Dekorativní čáry pod sekcemi */
+.Cenik::after, .Sluzby::after, .Onas::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background-color: black;
+}
+
+/* Hlavička */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6B46C1;
+  box-sizing: border-box;
+}
+
+#logo {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  background: url("Obrázky/Logo_1.png") center/contain no-repeat;
+}
+
+/* Navigace */
+.tlacitko {
+  font-size: 50px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.tlacitko:hover {
+  transform: scale(1.5);
+}
+
+.tlacitko-container-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.tlacitko-container {
+  display: flex;
+  gap: 50px;
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 50px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Slide */
+.slide-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.text-container {
+  position: relative;
+  width: 1000px;
+  min-height: 450px;
+  color: black;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(90%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  text-align: center;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slide li {
+  position: relative;
+  margin-left: 255px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Šipky */
+.arrow {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.2);
+  transition: 0.2s;
+}
+
+.arrow:hover { background-color: rgba(0,0,0,0.5); transform: scale(1.1); }
+.arrow:active { transform: scale(0.95); }
+
+/* Animace */
+.animace, .animace1, .animace2, .animace3 {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.animace.active { transform: translateX(0); opacity: 1; }
+.animace1.active { transform: translate3d(0); opacity: 1; }
+.animace2.active { transform: translate(0); opacity: 1; }
+.animace3.active { transform: translateY(0); opacity: 1; }
+
+/* Responzivita */
+@media (max-width: 768px) {
+  .Onas, .Cenik, .Sluzby {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 20px;
+    gap: 20px;
+  }
+  #obrazek1, #obrazek2 { width: 80%; height: auto; margin-bottom: 30px; }
+  .text, .Cenik-text { max-width: 100%; }
+  .slide-wrapper, .text-container { width: 100%; min-height: auto; }
+  .slide li { margin-left: 0; font-size: 20px; }
+  .tlacitko-container { display: none; flex-direction: column; background-color: #6B46C1; position: absolute; top: 120px; right: 0; width: 200px; padding: 20px; border-radius: 0 0 0 12px; }
+  #menu-toggle { display: block; }
+}
+
+@media (max-width: 480px) {
+  .Onas h1 { font-size: 28px; }
+  .Onas, .Cenik, .Sluzby { font-size: 18px; padding: 40px 15px; }
+  .tlacitko { font-size: 35px; }
+  .slide li { font-size: 18px; }
+}
